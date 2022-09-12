@@ -1,9 +1,10 @@
-import './App.css';
+import './App.scss';
+import Dashboard from './views/dashboard/Dashboard';
 
 function App() {
   return (
     <div className="App">
-      Covid Dashboard
+      <Dashboard />
     </div>
   );
 }

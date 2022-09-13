@@ -3,3 +3,12 @@
     margin-left: 40px;
     margin-top: 20px;
 }
+
+
+@media screen and (max-width: 800px) {
+    .chart-container {
+        width: 95%;
+        margin-left: 4vw;
+        margin-top: 3vh;
+      }
+}

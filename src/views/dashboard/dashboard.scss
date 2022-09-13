@@ -11,6 +11,7 @@ $active-color: #ffff00;
     flex-direction: column;
     font-size: calc(10px + 2vmin);
     color: #eff5fc;
+    overflow: hidden;
   
     .header {
       margin-top: 10px;
@@ -27,12 +28,42 @@ $active-color: #ffff00;
         margin-right: 30px;
       }
     }
+    .details-container {
+      display: flex;
+      justify-content: center;
+      .right-panel {
+        width: 80%;
+      }
+    }
+
+
+    @media screen and (max-width: 800px) {
+      min-height: 100vh;
+      font-size: calc(1vw + 2vmin);
+  
+      .header {
+        margin-top: 2vw;
+        .title {
+          font-size: 8vw;
+          margin-left: 18vw;
+        }
+        .date {
+          font-size: 3vw;
+          line-height: 10vw;
+          margin-right: 3vw;
+        }
+      }
+  
+      .details-container {
+        display: block;
+        .right-panel {
+          width: 100%;
+        }
+      }
+    }
 }
 
-.details-container {
-    display: flex;
-    justify-content: center;
-    .right-panel {
-      width: 80%;
-    }
-  }
+
+
+
+  

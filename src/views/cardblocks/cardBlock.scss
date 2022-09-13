@@ -61,3 +61,51 @@ $active-color: #ffff00;
       }
     }
   }
+
+  @media screen and (max-width: 800px) {
+
+    .display-flex {
+      display: block;
+    }
+
+    .card-block {
+      max-width: 92%;
+      margin: 5vw 0;
+      border: 0;
+      .card-container-title {
+        margin-bottom: 4vw;
+        font-size: 8vw;
+        font-weight: 200;      
+      }
+      .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        height: 20vh;
+        max-width: 100%;
+        justify-content: space-around;
+        .cards {
+          margin: 0 1vw;
+          max-width: 25%;
+          height: 6vh;
+          .count {
+            font-size: 4vw;
+          }
+          .Confirmed-card {
+            font-size: 3.5vw;
+          }
+        
+          .Deaths-card {
+            font-size: 3.5vw;
+          }
+        
+          .Recovered-card {
+            font-size: 3.5vw;
+          }
+        
+          .Active-card {
+            font-size: 3.5vw;
+          }
+        }
+      }
+    }
+  }

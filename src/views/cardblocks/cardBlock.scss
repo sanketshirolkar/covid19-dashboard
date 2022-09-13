@@ -1,0 +1,63 @@
+$confirmed-color: #448aff;
+$death-color: #ff5252;
+$recovered-color: #b2ff59;
+$active-color: #ffff00;
+
+.display-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.card-block {
+    width: 100%;
+    padding: 0 15px;
+    margin: 15px 0;
+    &.no-boder {
+      border: 0;
+    }
+    .card-container-title {
+      margin-bottom: 20px;
+      font-size: 40px;
+      font-weight: 200;
+    }
+    .card-container {
+      display: flex;
+      .cards {
+        margin: 0 10px;
+        border-bottom: 2px solid whitesmoke;
+        border-radius: 6px;
+        width: 25%;
+        height: 85px;
+        background: #11093f;
+        .count {
+          font-size: 30px;
+          font-weight: 600;
+          color: white;
+        }
+        .Confirmed-card {
+          color: $confirmed-color;
+          font-weight: 500;
+        }
+      
+        .Deaths-card {
+          color: $death-color;
+          font-weight: 500;
+        }
+      
+        .Recovered-card {
+          color: $recovered-color;
+          font-weight: 500;
+        }
+      
+        .Active-card {
+          color: $active-color;
+          font-weight: 500;
+        }
+        &:hover {
+          border: 2px solid whitesmoke;
+        }
+      }
+    }
+  }

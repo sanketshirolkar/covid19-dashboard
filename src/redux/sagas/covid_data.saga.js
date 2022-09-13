@@ -1,6 +1,6 @@
 import {call, takeLatest, put} from "redux-saga/effects";
 import * as actions from "../actionConstants";
-import {storeCovidData} from "../actions/covid_data.actions";
+import {storeCovidCountryData, storeCovidData} from "../actions/covid_data.actions";
 import { requestCovidDataAsync } from "../asyncActions/covid_data.async";
 
 
@@ -17,6 +17,7 @@ function* requestCovidData () {
                     Recovered: response?.data?.Global.TotalRecovered,
                 };
                 yield put(storeCovidData(newObject));
+                yield put(storeCovidCountryData(response?.data?.Countries));
             }
         }catch(e){
             return e;

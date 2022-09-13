@@ -30,9 +30,45 @@ $active-color: #ffff00;
     }
     .details-container {
       display: flex;
-      justify-content: center;
+      .left-panel{
+        width: 20%;
+        height: 50vh;
+        background: #11093f;
+        margin-left: 25px;
+        border-radius: 6px;
+        .search-field {
+          width: 80%;
+          background: #11093f;
+          color: #eff5fc;
+          border: 1px solid whitesmoke;
+          border-radius: 4px;
+          height: 20px;
+          padding: 5px;
+          font-size: 14px;
+          margin: 10px 0;
+        }
+        .country-list {
+          height: 42vh;
+          overflow-y: auto;
+          .country-row {
+            font-size: 18px;
+            text-align: left;
+            border-bottom: 1px solid whitesmoke;
+            padding: 12px 24px;
+            &:hover {
+              color: $confirmed-color;
+              cursor: pointer;
+            }
+          }
+        }
+      }
       .right-panel {
         width: 80%;
+        .chart-container {
+          width: 90%;
+          margin-left: 40px;
+          margin-top: 20px;
+        }
       }
     }
 
@@ -56,8 +92,35 @@ $active-color: #ffff00;
   
       .details-container {
         display: block;
+        .left-panel{
+          width: 90%;
+          margin-left: 5vw;
+          border-radius: 6px;
+          height: auto;
+          .MuiFormControl-root {
+            .MuiInputLabel-outlined {
+              line-height: 0;
+              font-size: 3.5vw;
+            }
+            .MuiOutlinedInput-input {
+              padding: 2.2vw;
+            }
+          }
+          .country-list {
+            height: 18vh;
+            .country-row {
+              font-size: 3.5vw;
+              padding: 2vw 5vw;
+            }
+          }
+        }
         .right-panel {
           width: 100%;
+          .chart-container {
+            width: 95%;
+            margin-left: 4vw;
+            margin-top: 3vh;
+          }
         }
       }
     }

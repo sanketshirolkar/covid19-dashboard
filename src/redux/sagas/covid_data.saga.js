@@ -8,7 +8,15 @@ function* requestCovidData () {
     try{
         const response = yield call(requestCovidDataAsync); 
             if(response){
-                yield put(storeCovidData(response?.data));
+                let newObject = {
+                    Cases: response?.data?.Global.TotalConfirmed,
+                    Active: response?.data?.Global.TotalConfirmed - response?.data?.Global.TotalRecovered,
+                     "Today's Cases": response?.data?.Global.NewConfirmed,
+                    Deaths: response?.data?.Global.TotalDeaths,
+                    "Today's Deaths": response?.data?.Global.NewDeaths,
+                    Recovered: response?.data?.Global.TotalRecovered,
+                };
+                yield put(storeCovidData(newObject));
             }
         }catch(e){
             return e;

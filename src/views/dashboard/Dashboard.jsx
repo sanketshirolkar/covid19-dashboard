@@ -8,6 +8,8 @@ import CountryData from "../countrywise/CountryData";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
+  const moment = require("moment");
+  const selectedDate = new Date();
 
   useEffect(() => {
     dispatch(requestCovidData());
@@ -17,7 +19,9 @@ const Dashboard = () => {
     <div className="main-container">
       <div className="header">
         <span className="title">COVID19</span>
-        <span className="date">14/09/2022</span>
+        <span className="date">
+          {moment(selectedDate).format("DD/MM/YYYY")}
+        </span>
       </div>
       <div>
         <CardBlock />

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./countryData.scss";
 import { getCovidCountryData } from "../../redux/selectors/covid_data.selectors";
 import { useSelector, useDispatch } from "react-redux";

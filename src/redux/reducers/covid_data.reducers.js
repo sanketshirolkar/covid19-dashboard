@@ -3,6 +3,7 @@ import * as actions from "../actionConstants";
 const initialState = {
     globalCovidData: {},
     covidCountryData: [],
+    eachCountryData:{},
 
 };
 
@@ -20,10 +21,18 @@ const storeCovidCountryData = (state, action) =>{
     }
 };
 
+const storeEachCountryData = (state, action) =>{
+    return {
+        ...state, 
+        eachCountryData: action.payload,
+    }
+};
+
 
 const handlers = {
     [actions.STORE_COVID_DATA]: storeCovidData,
     [actions.STORE_COVID_COUNTRY_DATA]: storeCovidCountryData,
+    [actions.STORE_EACH_COUNTRY_DATA]: storeEachCountryData,
 };
 
 

@@ -6,14 +6,8 @@ import CardBlock from "../cardblocks/CardBlock";
 import ChartView from "../chartview/ChartView";
 import CountryData from "../countrywise/CountryData";
 
-// import { getCovidCountryData } from "../../redux/selectors/covid_data.selectors";
-// import { useSelector } from "react-redux";
-
 const Dashboard = () => {
   const dispatch = useDispatch();
-
-  // const countryList = useSelector(getCovidCountryData);
-  // console.log(countryList);
 
   useEffect(() => {
     dispatch(requestCovidData());
@@ -23,7 +17,7 @@ const Dashboard = () => {
     <div className="main-container">
       <div className="header">
         <span className="title">COVID19</span>
-        <span className="date">13/09/2022</span>
+        <span className="date">14/09/2022</span>
       </div>
       <div>
         <CardBlock />

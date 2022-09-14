@@ -6,4 +6,6 @@ export const getGlobalCovidData = createSelector(globalData, (data)=> data?.glob
 
 export const getCovidCountryData = createSelector(globalData, (data)=> data?.covidCountryData || []);
 
+export const getEachCountryData = createSelector(globalData, (data)=> data?.eachCountryData || []);
+
 

@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./countryData.scss";
 import { getCovidCountryData } from "../../redux/selectors/covid_data.selectors";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { storeEachCountryData } from "../../redux/actions/covid_data.actions";
 
 const CountryData = () => {
-  const [selectedCountry, setSelectedCountry] = useState({
-    Country: "India",
-  });
+  const dispatch = useDispatch();
   const [searchKey, setSearchKey] = useState("");
-
   const countryList = useSelector(getCovidCountryData);
 
   const countryListData = () => {
@@ -25,6 +23,7 @@ const CountryData = () => {
   const countryData = (data) => {
     return (
       <div
+        key={data?.CountryCode}
         className="country-row"
         onClick={changeSelectedCountry.bind(null, data)}
       >
@@ -34,8 +33,7 @@ const CountryData = () => {
   };
 
   const changeSelectedCountry = (country) => {
-    setSelectedCountry(country);
-    console.log(selectedCountry);
+    dispatch(storeEachCountryData(country));
   };
 
   const searchHandler = (event) => {
